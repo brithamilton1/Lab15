@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Reddit Page</title>
-  </head>
-  <body>
+<section ng-repeat="post in redditPosts| limitTo: 5">
+  <img src="{{post.data.thumbnail}}"/>
+  <h3>{{post.data.title}}</h3>
+  <p>By: {{post.data.author}}</p>
+</section>
 
-  </body>
-</html>
