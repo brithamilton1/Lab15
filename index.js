@@ -6,11 +6,11 @@ app.config(function($routeProvider, $locationProvider){
     templateUrl: "index.html",
     controller: "IndexCtrl"
   })
-  .when("/", {
-    templateUrl:"fizzbuzz/fizzbuzz.html",
-    controller: "FizzBuzzCtrl"
+  .when("/fizzbuzz.html", {
+    templateUrl:"/fizzbuzz.html",
+    controller: "FizzBuzzControl"
   })
-  .when("/", {
+  .when("/reddit.html", {
     templateUrl:"/reddit.html",
     controller: "RedditCtrl"
 
