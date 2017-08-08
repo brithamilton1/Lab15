@@ -1,16 +1,31 @@
-var app = angular.module("myApp");
-fizzBuzzModule.controller('FizzBuzzCtrl', function($scope) {
-fizzBuzzFunction function() {
-  for (var i=1; i <= 20; i++)
-  {
-      if (i % 15 == 0)
-          console.log("FizzBuzz");
-      else if (i % 3 == 0)
-          console.log("Fizz");
-      else if (i % 5 == 0)
-          console.log("Buzz");
-      else
-          console.log(i);
+angular.module('fizzbuzz', [])
+
+
+    .factory("Counter", function() {
+      var increment = function() {
+        service.number++;
+        if (service.number % 15 === 0) {
+
+          service.display = "FIZZBUZZ"
+        }
+        else if (service.number % 3 === 0) {
+          service.display =  "FIZZ"
+        }
+        else if (service.number % 5 === 0) {
+          service.display =  "BUZZ"
+        }else{
+          service.display = service.number
+        }
       }
-  }
-});
+      var service = {
+        increment: increment,
+        number:0,
+        display: 'Click to start'
+      }
+      return service;
+    })
+
+    .controller("FizzBuzzController", function($scope, Counter) {
+
+      $scope.Counter = Counter;
+    })
