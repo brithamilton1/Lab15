@@ -1,21 +1,23 @@
 var app = angular.module("myApp");
 
-app.factory("RedditFactory", function ($http){
-    var postData;
+app.factory('RedditFactory', function($http){
+  var postData = null;
 
-    return{
-      getPosts: getPosts
-    };
+  return {
+    getPosts: getPosts,
+  };
+  function getPosts (){
 
-    function getPosts(){
-      if(postData){
-        return Promise.resolve(postData);
-      }
+    if(postData){
 
-      return $http.get ("https://www.reddit.com/r/aww/.json")
-        .then(function(result){
-            postData = result.data.data.children;
-            return postData;
-            });
-};
-});
+      return Promise.resolve(postData);
+    }
+  
+
+    return $http.get('https://www.reddit.com/r/aww/.json')
+      .then(function(response){
+        postData = response.data.data.children;
+        return postData;
+     })
+  }
+  });
