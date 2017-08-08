@@ -7,9 +7,10 @@
   <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <nav>
+    <nav ng-app="myApp">
       <a ng-href='/reddit.html'>Reddit</a>
       <a ng-href='/fizzbuzz.html'>Fizzbuzz</a>
+      <ng-view></ng-view>
     </nav>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
