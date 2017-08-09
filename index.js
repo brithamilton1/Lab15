@@ -8,7 +8,7 @@ app.config(function($routeProvider, $locationProvider){
   })
   .when("/fizzbuzz", {
     templateUrl:"/fizzbuzz.html",
-    controller: "FizzBuzzControl"
+    controller: "FizzBuzzController"
   })
   .when("/reddit", {
     templateUrl:"/reddit.html",

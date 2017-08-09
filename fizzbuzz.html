@@ -1,5 +1,5 @@
-
-<div ng-app="myApp" ng-controller="FizzBuzzController">
-  <input type='text'></input>
-  <button ng-click=''></button>
+<div>
+  <input ng-model='input' type='number'></input>
+  <button ng-click='fizzbuzz()'></button>
+  <span ng-if='input'>{{input}} </span>
 </div>
