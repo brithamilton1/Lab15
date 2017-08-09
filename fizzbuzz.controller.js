@@ -1,31 +1,17 @@
-angular.module('fizzbuzz', [])
+angular.module('myApp', [])
 
-
-    .factory("Counter", function() {
-      var increment = function() {
-        service.number++;
-        if (service.number % 15 === 0) {
-
-          service.display = "FIZZBUZZ"
+    .controller("FizzBuzzController", function($scope) {
+       if (input % 15 === 0) {
+         console.log('fizz buzz')
         }
-        else if (service.number % 3 === 0) {
-          service.display =  "FIZZ"
+        else if (input % 3 === 0) {
+          console.log('fizz')
         }
-        else if (service.number % 5 === 0) {
-          service.display =  "BUZZ"
+        else if (input % 5 === 0) {
+          console.log('buzz')
         }else{
-          service.display = service.number
+          console.log('i love dogs')
         }
       }
-      var service = {
-        increment: increment,
-        number:0,
-        display: 'Click to start'
-      }
-      return service;
-    })
 
-    .controller("FizzBuzzController", function($scope, Counter) {
-
-      $scope.Counter = Counter;
-    })
+    });
