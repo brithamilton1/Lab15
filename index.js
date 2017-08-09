@@ -20,3 +20,18 @@ app.config(function($routeProvider, $locationProvider){
 
     $locationProvider.hashPrefix("");
   });
+
+app.directive('noTransclude', function() {
+  return{
+    template: '<div>Please select Reddit or Fizzbuzz</div>',
+    replace: false 
+  };
+});
+
+app.directive('yesTransclude', function() {
+  return{
+    transclude: true,
+    template: '<div><ng-transclude/></div>', 
+    replace: true
+  };
+});

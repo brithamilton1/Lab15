@@ -6,11 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="style.css" rel="stylesheet">
   </head>
-  <body>
-    <nav ng-app="myApp">
+  <body ng-app="myApp">
+    <nav>
       <a ng-href='#reddit'>Reddit</a>
       <a ng-href='#fizzbuzz'>Fizzbuzz</a>
       <ng-view></ng-view>
+      <div no-transclude>
+       <p></p>
+      </div>
+      <div yes-transclude>
+      <p>Type Your Email Below</p>
+      <input type="email"></input>
+      <button type="button">Push me!</button>
+      </div>
     </nav>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
